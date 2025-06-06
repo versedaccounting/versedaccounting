@@ -25,8 +25,13 @@ const Hero: React.FC = () => {
               Contact us
               <ArrowRight size={20} />
             </a>
-            <a href="#services" className="btn btn-outline flex items-center justify-center gap-2">
-              Our services
+            <a 
+              href="https://calendly.com/versedacc" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-outline flex items-center justify-center gap-2"
+            >
+              Schedule a Consultation
             </a>
           </div>
         </div>

@@ -24,22 +24,22 @@ const About: React.FC = () => {
               </div>
               <div className="relative aspect-square mt-8">
                 <img 
-                  src="https://images.pexels.com/photos/7681101/pexels-photo-7681101.jpeg" 
-                  alt="Business Planning" 
+                  src="https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg" 
+                  alt="Business Accounting" 
                   className="w-full h-full object-cover rounded-lg shadow-md"
                 />
               </div>
               <div className="relative aspect-square -mt-8">
                 <img 
-                  src="https://images.pexels.com/photos/7681105/pexels-photo-7681105.jpeg" 
-                  alt="Tax Planning" 
+                  src="https://images.pexels.com/photos/6476258/pexels-photo-6476258.jpeg" 
+                  alt="Financial Planning" 
                   className="w-full h-full object-cover rounded-lg shadow-md"
                 />
               </div>
               <div className="relative aspect-square">
                 <img 
-                  src="https://images.pexels.com/photos/7681097/pexels-photo-7681097.jpeg" 
-                  alt="Financial Consulting" 
+                  src="https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg" 
+                  alt="Business Analytics" 
                   className="w-full h-full object-cover rounded-lg shadow-md"
                 />
               </div>

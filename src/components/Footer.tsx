@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <Logo imageUrl="https://imgur.com/a/pjgOPcn" />
+              <Logo imageUrl="https://imgur.com/Hnm86O3" />
             </div>
             <p className="text-secondary-300 mb-6 max-w-md">
               Transforming numbers into intelligent decisions. Specialized accounting for businesses of all sizes.

@@ -14,28 +14,34 @@ const About: React.FC = () => {
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-on-scroll">
-            <div className="relative">
-              <div className="relative z-10 rounded-lg overflow-hidden shadow-lg">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="relative aspect-square">
                 <img 
-                  src="https://images.pexels.com/photos/7821737/pexels-photo-7821737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                  alt="Versed Accounting Team" 
-                  className="w-full h-auto object-cover"
+                  src="https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg" 
+                  alt="Financial Analysis" 
+                  className="w-full h-full object-cover rounded-lg shadow-md"
                 />
               </div>
-              <div className="absolute -z-10 -right-6 -bottom-6 w-full h-full bg-primary-500 rounded-lg"></div>
-              <div className="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-white p-6 rounded-lg shadow-lg">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
-                    <span className="text-primary-500 font-bold">15</span>
-                  </div>
-                  <div className="font-medium">Years of experience</div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary-100 flex items-center justify-center">
-                    <span className="text-primary-500 font-bold">12</span>
-                  </div>
-                  <div className="font-medium">Financial experts</div>
-                </div>
+              <div className="relative aspect-square mt-8">
+                <img 
+                  src="https://images.pexels.com/photos/7681101/pexels-photo-7681101.jpeg" 
+                  alt="Business Planning" 
+                  className="w-full h-full object-cover rounded-lg shadow-md"
+                />
+              </div>
+              <div className="relative aspect-square -mt-8">
+                <img 
+                  src="https://images.pexels.com/photos/7681105/pexels-photo-7681105.jpeg" 
+                  alt="Tax Planning" 
+                  className="w-full h-full object-cover rounded-lg shadow-md"
+                />
+              </div>
+              <div className="relative aspect-square">
+                <img 
+                  src="https://images.pexels.com/photos/7681097/pexels-photo-7681097.jpeg" 
+                  alt="Financial Consulting" 
+                  className="w-full h-full object-cover rounded-lg shadow-md"
+                />
               </div>
             </div>
           </div>

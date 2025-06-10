@@ -64,7 +64,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="section bg-white relative">
+    <section id="contact" className="py-8 md:py-12 px-4 bg-white relative">
       <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-gray-50 to-white z-0"></div>
       
       <div className="container relative z-10">

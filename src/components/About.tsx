@@ -10,7 +10,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-12 md:py-16 px-4 bg-gray-50">
+    <section id="about" className="py-8 md:py-12 px-4 bg-gray-50">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-on-scroll">
@@ -58,7 +58,7 @@ const About: React.FC = () => {
               We pride ourselves on our commitment to providing exceptional client service. We take the time to get to know our clients and their businesses, and we work tirelessly to ensure that they receive the support and guidance they need to achieve their financial goals. If you're looking for a trusted partner to help you manage your finances and achieve your business objectives, look no further than Versed Accounting. Contact us today to schedule a consultation and learn more about how we can help you succeed.
             </p>
             
-            <div className="mb-8">
+            <div className="mb-4">
               <h3 className="text-xl font-bold mb-4">Our Values</h3>
               <ul className="space-y-2">
                 {valuesList.map((value, index) => (

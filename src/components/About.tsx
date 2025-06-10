@@ -10,7 +10,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="section bg-gray-50">
+    <section id="about" className="py-12 md:py-16 px-4 bg-gray-50">
       <div className="container">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="animate-on-scroll">

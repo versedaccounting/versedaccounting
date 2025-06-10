@@ -44,7 +44,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="section bg-gray-50">
+    <section id="services" className="py-12 md:py-16 px-4 bg-gray-50">
       <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
@@ -64,7 +64,7 @@ const Services: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-16 text-center animate-on-scroll">
+        <div className="mt-12 text-center animate-on-scroll">
           <a href="#contact" className="btn btn-primary inline-flex items-center gap-2">
             Request a proposal
           </a>

@@ -1,4 +1,4 @@
-# Versed Accounting – Site Institucional
+# Versed Accounting
 
 Este repositório contém o código-fonte do site institucional da Versed Accounting, desenvolvido com foco em desempenho, escalabilidade e boas práticas modernas de desenvolvimento web.
 

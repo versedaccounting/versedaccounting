@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { Facebook, Instagram, Linkedin, Mail, ChevronUp } from 'lucide-react';
 
@@ -13,28 +14,29 @@ const Footer: React.FC = () => {
     {
       title: 'Company',
       links: [
-        { name: 'Home', href: '#hero' },
-        { name: 'Services', href: '#services' },
-        { name: 'Testimonials', href: '#testimonials' },
-        { name: 'About Us', href: '#about' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'Home', href: '/', isRoute: true },
+        { name: 'Services', href: '/#services', isRoute: false },
+        { name: 'Testimonials', href: '/#testimonials', isRoute: false },
+        { name: 'About Us', href: '/#about', isRoute: false },
+        { name: 'Articles', href: '/articles', isRoute: true },
+        { name: 'Contact', href: '/#contact', isRoute: false },
       ]
     },
     {
       title: 'Services',
       links: [
-        { name: 'Bookkeeping', href: '#services' },
-        { name: 'Accounts Payable', href: '#services' },
-        { name: 'CFO Services', href: '#services' },
-        { name: 'Consulting', href: '#services' },
+        { name: 'Bookkeeping', href: '/#services', isRoute: false },
+        { name: 'Accounts Payable', href: '/#services', isRoute: false },
+        { name: 'CFO Services', href: '/#services', isRoute: false },
+        { name: 'Consulting', href: '/#services', isRoute: false },
       ]
     },
     {
       title: 'Legal',
       links: [
-        { name: 'Terms of Use', href: '#' },
-        { name: 'Privacy Policy', href: '#' },
-        { name: 'Cookies', href: '#' },
+        { name: 'Terms of Use', href: '#', isRoute: false },
+        { name: 'Privacy Policy', href: '#', isRoute: false },
+        { name: 'Cookies', href: '#', isRoute: false },
       ]
     },
   ];
@@ -77,12 +79,21 @@ const Footer: React.FC = () => {
               <ul className="space-y-3">
                 {column.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a 
-                      href={link.href} 
-                      className="text-secondary-300 hover:text-primary-500 transition-colors"
-                    >
-                      {link.name}
-                    </a>
+                    {link.isRoute ? (
+                      <Link 
+                        to={link.href} 
+                        className="text-secondary-300 hover:text-primary-500 transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a 
+                        href={link.href} 
+                        className="text-secondary-300 hover:text-primary-500 transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

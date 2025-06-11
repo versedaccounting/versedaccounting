@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -6,6 +7,8 @@ import Testimonials from './components/Testimonials';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Articles from './components/Articles';
+import ArticleDetail from './components/ArticleDetail';
 
 function App() {
   // State to track if user has scrolled down the page
@@ -43,24 +46,34 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Home page component
+  const HomePage = () => (
+    <main>
+      <Hero />
+      <Services />
+      <Testimonials />
+      <About />
+      <Contact />
+    </main>
+  );
+
   return (
-    // Main app container with full height and white background
-    <div className="min-h-screen flex flex-col bg-white">
-      {/* Header component with scroll state */}
-      <Header scrolling={scrolling} />
-      
-      {/* Main content area */}
-      <main>
-        <Hero />
-        <Services />
-        <Testimonials />
-        <About />
-        <Contact />
-      </main>
-      
-      {/* Footer component */}
-      <Footer />
-    </div>
+    <Router>
+      <div className="min-h-screen flex flex-col bg-white">
+        {/* Header component with scroll state */}
+        <Header scrolling={scrolling} />
+        
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:slug" element={<ArticleDetail />} />
+        </Routes>
+        
+        {/* Footer component */}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

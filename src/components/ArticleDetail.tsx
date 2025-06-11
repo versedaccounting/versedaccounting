@@ -21,6 +21,9 @@ const ArticleDetail: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+
     const loadArticle = async () => {
       if (!slug) {
         setError('Article not found');
@@ -291,6 +294,16 @@ Lembre-se: o planejamento tributário deve ser feito com responsabilidade e semp
     };
 
     loadArticle();
+
+    // Trigger animations after a short delay
+    const timer = setTimeout(() => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      animatedElements.forEach((el) => {
+        el.classList.add('in-view');
+      });
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, [slug]);
 
   const formatDate = (dateString: string) => {
@@ -352,7 +365,7 @@ Lembre-se: o planejamento tributário deve ser feito com responsabilidade e semp
         </div>
 
         {/* Article header */}
-        <header className="mb-8 animate-on-scroll">
+        <header className="mb-8 animate-on-scroll in-view">
           <div className="mb-4">
             <span className="inline-block bg-primary-100 text-primary-700 text-sm font-medium px-3 py-1 rounded-full">
               {article.category}
@@ -381,7 +394,7 @@ Lembre-se: o planejamento tributário deve ser feito com responsabilidade e semp
         </header>
 
         {/* Article content */}
-        <article className="prose prose-lg max-w-none animate-on-scroll">
+        <article className="prose prose-lg max-w-none animate-on-scroll in-view">
           <ReactMarkdown 
             remarkPlugins={[remarkGfm]}
             className="markdown-content"
@@ -391,7 +404,7 @@ Lembre-se: o planejamento tributário deve ser feito com responsabilidade e semp
         </article>
 
         {/* Call to action */}
-        <div className="mt-12 p-8 bg-gray-50 rounded-lg animate-on-scroll">
+        <div className="mt-12 p-8 bg-gray-50 rounded-lg animate-on-scroll in-view">
           <h3 className="text-2xl font-bold mb-4">Need Professional Help?</h3>
           <p className="text-secondary-600 mb-6">
             Our team of accounting experts is ready to help you implement these strategies in your business.

@@ -16,6 +16,9 @@ const Articles: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+
     // Simulate loading articles - in a real app, this would fetch from an API or load markdown files
     const loadArticles = async () => {
       try {
@@ -48,6 +51,16 @@ const Articles: React.FC = () => {
     };
 
     loadArticles();
+
+    // Trigger animations after a short delay to ensure content is visible
+    const timer = setTimeout(() => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      animatedElements.forEach((el) => {
+        el.classList.add('in-view');
+      });
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const formatDate = (dateString: string) => {
@@ -78,7 +91,7 @@ const Articles: React.FC = () => {
     <div className="min-h-screen pt-28 pb-20 px-4">
       <div className="container">
         {/* Header */}
-        <div className="text-center mb-12 animate-on-scroll">
+        <div className="text-center mb-12 animate-on-scroll in-view">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             <span className="text-primary-500">Articles</span>
           </h1>
@@ -93,7 +106,7 @@ const Articles: React.FC = () => {
             {articles.map((article, index) => (
               <article 
                 key={article.slug} 
-                className="card hover:shadow-lg hover:-translate-y-1 animate-on-scroll"
+                className="card hover:shadow-lg hover:-translate-y-1 animate-on-scroll in-view"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="p-6">
@@ -151,7 +164,7 @@ const Articles: React.FC = () => {
         )}
 
         {/* Call to action */}
-        <div className="mt-16 text-center animate-on-scroll">
+        <div className="mt-16 text-center animate-on-scroll in-view">
           <div className="bg-gray-50 rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-4">Need Personalized Advice?</h3>
             <p className="text-secondary-600 mb-6 max-w-2xl mx-auto">

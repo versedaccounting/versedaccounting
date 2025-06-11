@@ -52,7 +52,15 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div className="lg:col-span-2">
             <div className="mb-6">
-              <Logo imageUrl="https://i.imgur.com/NN3RqFI.png" />
+              <div className="flex items-center">
+                <div className="h-60 w-auto">
+                  <img 
+                    src="https://i.imgur.com/NN3RqFI.png" 
+                    alt="Versed Accounting LLC" 
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+              </div>
             </div>
             <p className="text-secondary-300 mb-6 max-w-md">
               Transforming numbers into intelligent decisions. Specialized accounting for businesses of all sizes.

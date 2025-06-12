@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 
@@ -56,65 +56,53 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
           <Logo imageUrl="https://www.versedacc.com/gallery/Versed%20Accounting.png?ts=1740713198" />
         </Link>
 
-        <div className="flex items-center gap-6">
-          {/* Navigation */}
-          <nav className="hidden md:block">
-            <ul className="flex space-x-8">
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  {link.href.startsWith('/') && !link.href.includes('#') ? (
-                    <Link
-                      to={link.href}
-                      className={`font-medium hover:text-primary-500 transition-colors ${
-                        scrolling ? 'text-secondary-800' : 'text-secondary-800'
-                      }`}
-                      onClick={(e) => {
-                        if (link.name === 'Home' && isHomePage) {
-                          e.preventDefault();
-                          handleNavClick(link.href, link.isExternal, link.name);
-                        }
-                      }}
-                    >
-                      {link.name}
-                    </Link>
-                  ) : (
-                    <a
-                      href={link.href}
-                      className={`font-medium hover:text-primary-500 transition-colors ${
-                        scrolling ? 'text-secondary-800' : 'text-secondary-800'
-                      }`}
-                      onClick={(e) => {
-                        if (link.href.startsWith('#')) {
-                          e.preventDefault();
-                          handleNavClick(link.href, link.isExternal, link.name);
-                        }
-                      }}
-                    >
-                      {link.name}
-                    </a>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </nav>
+        <nav className="hidden md:block">
+          <ul className="flex space-x-8">
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                {link.href.startsWith('/') && !link.href.includes('#') ? (
+                  <Link
+                    to={link.href}
+                    className={`font-medium hover:text-primary-500 transition-colors ${
+                      scrolling ? 'text-secondary-800' : 'text-secondary-800'
+                    }`}
+                    onClick={(e) => {
+                      if (link.name === 'Home' && isHomePage) {
+                        e.preventDefault();
+                        handleNavClick(link.href, link.isExternal, link.name);
+                      }
+                    }}
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    href={link.href}
+                    className={`font-medium hover:text-primary-500 transition-colors ${
+                      scrolling ? 'text-secondary-800' : 'text-secondary-800'
+                    }`}
+                    onClick={(e) => {
+                      if (link.href.startsWith('#')) {
+                        e.preventDefault();
+                        handleNavClick(link.href, link.isExternal, link.name);
+                      }
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-          {/* Google Translate Widget - Desktop */}
-          <div className="hidden md:block">
-            <div className="translate-container">
-              <Globe size={18} className="translate-icon" />
-              <div id="google_translate_element" className="translate-widget"></div>
-            </div>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-secondary-800 focus:outline-none"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+        <button
+          className="md:hidden text-secondary-800 focus:outline-none"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </div>
 
       {mobileMenuOpen && (
@@ -153,15 +141,6 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                 )}
               </li>
             ))}
-            
-            {/* Mobile Google Translate */}
-            <li className="px-6 py-3 border-t border-secondary-100">
-              <div className="translate-container-mobile">
-                <Globe size={16} className="text-secondary-600 flex-shrink-0" />
-                <span className="text-sm text-secondary-600 font-medium">Translate:</span>
-                <div id="google_translate_element_mobile" className="translate-widget-mobile flex-1"></div>
-              </div>
-            </li>
           </ul>
         </div>
       )}

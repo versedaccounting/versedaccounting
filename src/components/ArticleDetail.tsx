@@ -36,245 +36,259 @@ const ArticleDetail: React.FC = () => {
         const mockArticles: { [key: string]: ArticleData } = {
           'primeiro-artigo': {
             slug: 'primeiro-artigo',
-            title: 'Como Organizar suas Finanças Empresariais',
-            content: `# Como Organizar suas Finanças Empresariais
+            title: 'How to Organize Your Business Finances',
+            content: `# How to Organize Your Business Finances
 
-Manter as finanças empresariais organizadas é fundamental para o sucesso de qualquer negócio. Neste artigo, vamos explorar as melhores práticas para garantir que sua empresa tenha controle total sobre suas finanças.
+Keeping business finances organized is essential for the success of any company. In this article, we will explore best practices to ensure your business has full control over its finances.
 
-## Por que a Organização Financeira é Importante?
+## Why Is Financial Organization Important?
 
-Uma gestão financeira eficiente permite:
+Efficient financial management allows for:
 
-- **Tomada de decisões informadas**: Com dados precisos, você pode fazer escolhas estratégicas baseadas em fatos
-- **Controle de fluxo de caixa**: Evite surpresas desagradáveis e mantenha a liquidez da empresa
-- **Planejamento tributário**: Organize-se para cumprir obrigações fiscais e otimizar impostos
-- **Crescimento sustentável**: Base sólida para expansão e investimentos
+- **Informed decision-making**: With accurate data, you can make strategic, fact-based choices
+- **Cash flow control**: Avoid unpleasant surprises and maintain the company's liquidity
+- **Tax planning**: Stay organized to meet tax obligations and optimize taxation
+- **Sustainable growth**: Build a solid foundation for expansion and investments
 
-## Passos Essenciais para Organizar suas Finanças
+## Essential Steps to Organize Your Finances
 
-### 1. Separe Contas Pessoais das Empresariais
+### 1. Separate Personal and Business Accounts
 
-Este é o primeiro e mais importante passo. Misturar finanças pessoais com empresariais pode causar:
-- Dificuldades na prestação de contas
-- Problemas com a Receita Federal
-- Perda de controle sobre os gastos reais da empresa
+This is the first and most important step. Mixing personal and business finances can lead to:
+- Difficulties in accounting
+- Issues with tax authorities
+- Loss of control over the company's actual expenses
 
-### 2. Implemente um Sistema de Controle
+### 2. Implement a Control System
 
-Utilize ferramentas adequadas para:
-- Registrar todas as entradas e saídas
-- Categorizar despesas e receitas
-- Gerar relatórios periódicos
-- Acompanhar indicadores financeiros
+Use appropriate tools to:
+- Record all income and expenses
+- Categorize expenses and revenues
+- Generate periodic reports
+- Monitor financial indicators
 
-### 3. Estabeleça Rotinas Financeiras
+### 3. Establish Financial Routines
 
-Crie hábitos como:
-- Conciliação bancária semanal
-- Análise mensal de resultados
-- Planejamento trimestral
-- Revisão anual de estratégias
+Develop habits such as:
+- Weekly bank reconciliation
+- Monthly performance analysis
+- Quarterly planning
+- Annual strategy review
 
-## Ferramentas Recomendadas
+## Recommended Tools
 
-Para pequenas e médias empresas, recomendamos:
+For small and medium-sized businesses, we recommend:
 
-1. **Software de gestão financeira**: QuickBooks, Conta Azul, ou similar
-2. **Planilhas estruturadas**: Para controles específicos
-3. **Apps de gestão**: Para acompanhamento móvel
-4. **Assessoria contábil**: Para orientação especializada
+1. **Financial management software**: QuickBooks, Xero, or similar
+2. **Structured spreadsheets**: For specific controls
+3. **Management apps**: For mobile tracking
+4. **Accounting advisory services**: For expert guidance
 
-## Indicadores Importantes para Acompanhar
+## Key Indicators to Monitor
 
-### Fluxo de Caixa
-Monitore entradas e saídas diárias para evitar problemas de liquidez.
+### Cash Flow
+Monitor daily inflows and outflows to avoid liquidity problems.
 
-### Margem de Lucro
-Calcule regularmente para entender a rentabilidade do negócio.
+### Profit Margin
+Calculate regularly to understand the business's profitability.
 
-### Ponto de Equilíbrio
-Saiba exatamente quanto precisa faturar para cobrir todos os custos.
+### Break-even Point
+Know exactly how much you need to bill to cover all costs.
 
-### Prazo Médio de Recebimento
-Controle o tempo entre a venda e o recebimento.
+### Average Collection Period
+Track the time between sales and receipt of payment.
 
-## Erros Comuns a Evitar
+## Common Mistakes to Avoid
 
-- **Não registrar pequenas despesas**: Todo gasto deve ser documentado
-- **Atrasar a conciliação bancária**: Faça semanalmente
-- **Ignorar o planejamento tributário**: Organize-se com antecedência
-- **Não ter reserva de emergência**: Mantenha pelo menos 3 meses de despesas
+- **Not recording small expenses**: Every expense must be documented
+- **Delaying bank reconciliation**: Do it weekly
+- **Ignoring tax planning**: Stay organized in advance
+- **Not having an emergency reserve**: Keep at least 3 months of expenses set aside
 
-## Conclusão
+## Conclusion
 
-A organização financeira não é um luxo, mas uma necessidade para qualquer empresa que deseja crescer de forma sustentável. Comece implementando os passos básicos e vá evoluindo gradualmente.
+Financial organization is not a luxury, but a necessity for any company that wants to grow sustainably. Start by implementing the basic steps and gradually improve over time.
 
-Lembre-se: investir tempo na organização financeira hoje significa economizar tempo, dinheiro e dores de cabeça no futuro.
+Remember: investing time in financial organization today means saving time, money, and headaches in the future.
 
 ---
 
-*Precisa de ajuda para organizar as finanças da sua empresa? Entre em contato conosco e descubra como podemos ajudar você a ter controle total sobre suas finanças empresariais.*`,
+*Need help organizing your company's finances? Contact us and find out how we can help you gain full control over your business finances.*`,
             date: '2024-01-15',
             readTime: '5 min',
-            category: 'Finanças',
+            category: 'Finance',
             author: 'Versed Accounting Team'
           },
           'segundo-artigo': {
             slug: 'segundo-artigo',
-            title: 'Planejamento Tributário para Pequenas Empresas',
-            content: `# Planejamento Tributário para Pequenas Empresas
+            title: 'Tax Planning for Small Businesses',
+            content: `# Tax Planning for Small Businesses
 
-O planejamento tributário é uma das estratégias mais eficazes para reduzir a carga fiscal da sua empresa de forma legal e segura. Neste guia completo, você aprenderá como implementar um planejamento tributário eficiente.
+Tax planning is one of the most effective strategies to legally and safely reduce your company's tax burden. In this comprehensive guide, you will learn how to implement efficient tax planning.
 
-## O que é Planejamento Tributário?
+## What Is Tax Planning?
 
-O planejamento tributário é o conjunto de ações legais que visam reduzir ou postergar o pagamento de tributos, aproveitando as oportunidades oferecidas pela legislação fiscal.
+Tax planning is a set of legal actions aimed at reducing or postponing tax payments by taking advantage of opportunities provided by tax legislation.
 
-### Benefícios do Planejamento Tributário
+### Benefits of Tax Planning
 
-- **Redução da carga tributária**: Economia de até 30% em impostos
-- **Melhoria do fluxo de caixa**: Mais recursos para investir no negócio
-- **Conformidade fiscal**: Cumprimento correto das obrigações
-- **Vantagem competitiva**: Preços mais competitivos no mercado
+- **Tax burden reduction**: Save up to 30% in taxes
+- **Improved cash flow**: More resources to invest in the business
+- **Tax compliance**: Proper fulfillment of obligations
+- **Competitive advantage**: More competitive pricing in the market
 
-## Regimes Tributários no Brasil
+## Tax Planning Strategies
 
-### Simples Nacional
-Ideal para empresas com faturamento até R$ 4,8 milhões anuais.
+### 1. Choosing the Right Business Structure
 
-**Vantagens:**
-- Alíquotas reduzidas
-- Unificação de tributos
-- Menos burocracia
+The correct choice can represent significant savings. Factors to consider:
+- Annual revenue
+- Profit margin
+- Type of activity
+- Cost structure
 
-**Desvantagens:**
-- Limitações de atividades
-- Restrições para alguns tipos de empresa
+### 2. Taking Advantage of Tax Deductions
 
-### Lucro Presumido
-Para empresas com faturamento até R$ 78 milhões anuais.
+Maximize deductions such as:
+- Business expenses
+- Equipment depreciation
+- Professional development costs
+- Home office expenses (for applicable businesses)
 
-**Características:**
-- Base de cálculo presumida
-- Alíquotas fixas
-- Simplicidade no cálculo
+### 3. Investment Planning
 
-### Lucro Real
-Obrigatório para empresas com faturamento superior a R$ 78 milhões.
+Organize investments to:
+- Take advantage of accelerated depreciation
+- Use Section 179 deductions
+- Optimize expense timing
+- Plan major purchases strategically
 
-**Características:**
-- Tributação sobre lucro efetivo
-- Maior complexidade
-- Possibilidade de compensação de prejuízos
+### 4. Retirement Planning
 
-## Estratégias de Planejamento Tributário
+Business owners can benefit from:
+- SEP-IRA contributions
+- Solo 401(k) plans
+- Defined benefit plans
+- Tax-deferred growth
 
-### 1. Escolha do Regime Tributário Adequado
+## Quarterly Tax Planning
 
-A escolha correta pode representar uma economia significativa. Fatores a considerar:
-- Faturamento anual
-- Margem de lucro
-- Tipo de atividade
-- Estrutura de custos
+### First Quarter (January-March)
+- Review previous year's results
+- Plan estimated tax payments
+- Organize documentation
+- Set up accounting systems
 
-### 2. Aproveitamento de Incentivos Fiscais
+### Second Quarter (April-June)
+- File annual tax returns
+- Make first quarter estimated payments
+- Review business structure
+- Plan mid-year strategies
 
-Explore benefícios como:
-- Lei do Bem (inovação tecnológica)
-- Lei Rouanet (cultura)
-- Incentivos regionais
-- Benefícios setoriais
+### Third Quarter (July-September)
+- Mid-year financial review
+- Adjust estimated payments
+- Plan equipment purchases
+- Review retirement contributions
 
-### 3. Planejamento de Investimentos
+### Fourth Quarter (October-December)
+- Implement year-end strategies
+- Maximize deductions
+- Plan for next year
+- Document all tax-related activities
 
-Organize investimentos para:
-- Aproveitar depreciação acelerada
-- Utilizar incentivos de inovação
-- Otimizar dedutibilidade de despesas
+## Record Keeping Best Practices
 
-### 4. Gestão de Prazos
+### Essential Documents to Maintain
+- All business receipts and invoices
+- Bank statements and canceled checks
+- Payroll records
+- Asset purchase documentation
+- Mileage logs for business travel
 
-Planeje pagamentos para:
-- Aproveitar descontos
-- Evitar multas e juros
-- Otimizar fluxo de caixa
+### Digital Organization
+- Use cloud-based storage
+- Implement consistent naming conventions
+- Regular backup procedures
+- Secure access controls
 
-## Cuidados e Riscos
+## Common Tax Planning Mistakes
 
-### Elisão vs. Evasão Fiscal
+### Inadequate Record Keeping
+- Missing receipts and documentation
+- Poor organization systems
+- Failure to track business expenses
 
-- **Elisão**: Legal, planejamento dentro da lei
-- **Evasão**: Ilegal, sonegação de impostos
+### Timing Issues
+- Missing estimated payment deadlines
+- Poor timing of income and expenses
+- Inadequate year-end planning
 
-### Norma Geral Antielisão
+### Lack of Professional Guidance
+- Attempting complex planning alone
+- Not staying current with tax law changes
+- Failing to seek specialized advice
 
-Cuidado com planejamentos que:
-- Não tenham propósito negocial
-- Sejam artificiais ou abusivos
-- Visem apenas economia fiscal
+## When to Seek Professional Help
 
-## Documentação e Controles
+Consider professional tax planning services when:
+- Your business is growing rapidly
+- You have complex income sources
+- Tax laws change significantly
+- You want to optimize your tax strategy
 
-Mantenha sempre:
-- Documentação completa das operações
-- Justificativas para escolhas tributárias
-- Controles internos adequados
-- Assessoria especializada
+## Technology Tools for Tax Planning
 
-## Quando Revisar o Planejamento
+### Accounting Software
+- QuickBooks Online
+- Xero
+- FreshBooks
+- Wave Accounting
 
-Revise seu planejamento quando:
-- Houver mudanças na legislação
-- A empresa crescer significativamente
-- Mudarem as atividades da empresa
-- Surgirem novos incentivos
+### Expense Tracking Apps
+- Receipt scanning capabilities
+- Mileage tracking
+- Integration with accounting software
+- Real-time expense categorization
 
-## Ferramentas de Apoio
+### Tax Preparation Software
+- Professional-grade tax software
+- Multi-state filing capabilities
+- Audit support features
+- Integration with bookkeeping systems
 
-### Software Tributário
-- Cálculo automático de impostos
-- Acompanhamento de obrigações
-- Simulações de cenários
+## Year-End Tax Strategies
 
-### Assessoria Especializada
-- Análise personalizada
-- Acompanhamento de mudanças legais
-- Implementação de estratégias
+### Income Timing
+- Defer income to next year when beneficial
+- Accelerate income when in lower tax brackets
+- Consider installment sales
+- Plan bonus and commission timing
 
-## Cronograma de Planejamento Anual
+### Expense Acceleration
+- Purchase necessary equipment before year-end
+- Pay outstanding business expenses
+- Prepay certain deductible expenses
+- Consider equipment leasing vs. purchasing
 
-### Janeiro-Março
-- Análise dos resultados do ano anterior
-- Revisão do regime tributário
-- Planejamento para o ano corrente
+### Retirement Contributions
+- Maximize SEP-IRA contributions
+- Consider Solo 401(k) contributions
+- Plan for defined benefit plans
+- Evaluate Roth conversion opportunities
 
-### Abril-Junho
-- Acompanhamento dos resultados
-- Ajustes necessários
-- Aproveitamento de incentivos
+## Conclusion
 
-### Julho-Setembro
-- Avaliação do meio do ano
-- Projeções para o final do ano
-- Estratégias de final de exercício
+Effective tax planning is essential for your business's financial health. When properly executed, it can lead to significant savings and competitive advantage.
 
-### Outubro-Dezembro
-- Implementação de estratégias finais
-- Preparação para o próximo ano
-- Documentação das ações realizadas
-
-## Conclusão
-
-O planejamento tributário é essencial para a saúde financeira da sua empresa. Quando bem executado, pode resultar em economia significativa e vantagem competitiva.
-
-Lembre-se: o planejamento tributário deve ser feito com responsabilidade e sempre dentro da legalidade. A assessoria de profissionais especializados é fundamental para o sucesso.
+Remember: tax planning must be done responsibly and always within the law. The guidance of specialized professionals is crucial for success.
 
 ---
 
-*Quer implementar um planejamento tributário eficiente na sua empresa? Nossa equipe de especialistas pode ajudar você a reduzir sua carga tributária de forma legal e segura. Entre em contato conosco!*`,
+*Want to implement efficient tax planning for your business? Our team of experts can help you legally and safely reduce your tax burden. Contact us today!*`,
             date: '2024-01-10',
             readTime: '7 min',
-            category: 'Impostos',
+            category: 'Taxes',
             author: 'Versed Accounting Team'
           }
         };
@@ -308,7 +322,7 @@ Lembre-se: o planejamento tributário deve ser feito com responsabilidade e semp
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('pt-BR', {
+    return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
@@ -387,7 +401,7 @@ Lembre-se: o planejamento tributário deve ser feito com responsabilidade e semp
             </div>
             {article.author && (
               <div>
-                <span>Por {article.author}</span>
+                <span>By {article.author}</span>
               </div>
             )}
           </div>

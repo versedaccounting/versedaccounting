@@ -26,19 +26,19 @@ const Articles: React.FC = () => {
         const mockArticles: Article[] = [
           {
             slug: 'primeiro-artigo',
-            title: 'Como Organizar suas Finanças Empresariais',
-            excerpt: 'Descubra as melhores práticas para manter suas finanças empresariais organizadas e otimizar seus resultados.',
+            title: 'How to Organize Your Business Finances',
+            excerpt: 'Discover the best practices to keep your business finances organized and optimize your results.',
             date: '2024-01-15',
             readTime: '5 min',
-            category: 'Finanças'
+            category: 'Finance'
           },
           {
             slug: 'segundo-artigo',
-            title: 'Planejamento Tributário para Pequenas Empresas',
-            excerpt: 'Estratégias eficazes de planejamento tributário que podem economizar até 30% em impostos para sua empresa.',
+            title: 'Tax Planning for Small Businesses',
+            excerpt: 'Effective tax planning strategies that can save up to 30% in taxes for your business.',
             date: '2024-01-10',
             readTime: '7 min',
-            category: 'Impostos'
+            category: 'Taxes'
           }
         ];
         
@@ -65,7 +65,7 @@ const Articles: React.FC = () => {
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('pt-BR', {
+    return date.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
@@ -148,7 +148,7 @@ const Articles: React.FC = () => {
                     to={`/articles/${article.slug}`}
                     className="inline-flex items-center gap-2 text-primary-500 hover:text-primary-600 font-medium transition-colors"
                   >
-                    Ler mais
+                    Read more
                     <ArrowRight size={16} />
                   </Link>
                 </div>

@@ -25,8 +25,14 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
     { name: 'Contact', href: isHomePage ? '#contact' : '/#contact', isExternal: false },
   ];
 
-  const handleNavClick = (href: string, isExternal: boolean) => {
+  const handleNavClick = (href: string, isExternal: boolean, linkName: string) => {
     setMobileMenuOpen(false);
+    
+    // Handle Home link - scroll to top if already on home page
+    if (linkName === 'Home' && isHomePage) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
     
     if (!isExternal && href.startsWith('#')) {
       // Handle anchor links on the same page
@@ -60,6 +66,12 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                     className={`font-medium hover:text-primary-500 transition-colors ${
                       scrolling ? 'text-secondary-800' : 'text-secondary-800'
                     }`}
+                    onClick={(e) => {
+                      if (link.name === 'Home' && isHomePage) {
+                        e.preventDefault();
+                        handleNavClick(link.href, link.isExternal, link.name);
+                      }
+                    }}
                   >
                     {link.name}
                   </Link>
@@ -72,7 +84,7 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                     onClick={(e) => {
                       if (link.href.startsWith('#')) {
                         e.preventDefault();
-                        handleNavClick(link.href, link.isExternal);
+                        handleNavClick(link.href, link.isExternal, link.name);
                       }
                     }}
                   >
@@ -102,7 +114,14 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                   <Link
                     to={link.href}
                     className="block py-3 px-6 text-secondary-800 hover:bg-primary-50 hover:text-primary-500"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={(e) => {
+                      if (link.name === 'Home' && isHomePage) {
+                        e.preventDefault();
+                        handleNavClick(link.href, link.isExternal, link.name);
+                      } else {
+                        setMobileMenuOpen(false);
+                      }
+                    }}
                   >
                     {link.name}
                   </Link>
@@ -114,7 +133,7 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                       if (link.href.startsWith('#')) {
                         e.preventDefault();
                       }
-                      handleNavClick(link.href, link.isExternal);
+                      handleNavClick(link.href, link.isExternal, link.name);
                     }}
                   >
                     {link.name}

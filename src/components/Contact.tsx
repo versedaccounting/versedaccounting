@@ -64,10 +64,8 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-8 md:py-12 px-4 bg-white relative">
-      <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-gray-50 to-white z-0"></div>
-      
-      <div className="container relative z-10">
+    <section id="contact" className="py-8 md:py-12 px-4 bg-white">
+      <div className="container">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto">

@@ -50,23 +50,20 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="bg-secondary-900 text-white">
-      {/* Call to Action Section */}
-      <div className="bg-gradient-to-r from-primary-500 to-primary-400 py-16">
+      {/* Call to Action Section - Reduced Size */}
+      <div className="bg-gradient-to-r from-primary-500 to-primary-400 py-8">
         <div className="container text-center">
-          <div className="max-w-3xl mx-auto">
-            <h3 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6">
+          <div className="max-w-2xl mx-auto">
+            <h3 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4">
               Prefer to schedule a consultation? Click the button below
             </h3>
-            <p className="text-lg text-secondary-800 mb-8 max-w-2xl mx-auto">
-              Get personalized accounting advice tailored to your business needs. Our experts are ready to help you achieve your financial goals.
-            </p>
             <a 
               href="https://calendly.com/versedacc" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex items-center gap-3 bg-secondary-900 text-primary-500 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-secondary-800 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-secondary-900 text-primary-500 px-6 py-3 rounded-lg font-semibold hover:bg-secondary-800 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
             >
-              <Calendar size={24} />
+              <Calendar size={20} />
               Schedule a Consultation
             </a>
           </div>

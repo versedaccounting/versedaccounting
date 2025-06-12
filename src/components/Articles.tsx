@@ -25,7 +25,7 @@ const Articles: React.FC = () => {
         // Mock articles data - replace with actual markdown file loading
         const mockArticles: Article[] = [
           {
-            slug: 'primeiro-artigo',
+            slug: 'how-to-organize-your-business-finances',
             title: 'How to Organize Your Business Finances',
             excerpt: 'Discover the best practices to keep your business finances organized and optimize your results.',
             date: '2024-01-15',
@@ -33,7 +33,7 @@ const Articles: React.FC = () => {
             category: 'Finance'
           },
           {
-            slug: 'segundo-artigo',
+            slug: 'tax-planning-for-small-businesses',
             title: 'Tax Planning for Small Businesses',
             excerpt: 'Effective tax planning strategies that can save up to 30% in taxes for your business.',
             date: '2024-01-10',

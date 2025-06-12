@@ -34,8 +34,8 @@ const ArticleDetail: React.FC = () => {
       try {
         // Mock article data - in a real app, this would load the actual markdown file
         const mockArticles: { [key: string]: ArticleData } = {
-          'primeiro-artigo': {
-            slug: 'primeiro-artigo',
+          'how-to-organize-your-business-finances': {
+            slug: 'how-to-organize-your-business-finances',
             title: 'How to Organize Your Business Finances',
             content: `# How to Organize Your Business Finances
 
@@ -119,8 +119,8 @@ Remember: investing time in financial organization today means saving time, mone
             category: 'Finance',
             author: 'Versed Accounting Team'
           },
-          'segundo-artigo': {
-            slug: 'segundo-artigo',
+          'tax-planning-for-small-businesses': {
+            slug: 'tax-planning-for-small-businesses',
             title: 'Tax Planning for Small Businesses',
             content: `# Tax Planning for Small Businesses
 

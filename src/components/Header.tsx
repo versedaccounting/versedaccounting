@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
           <Logo imageUrl="https://www.versedacc.com/gallery/Versed%20Accounting.png?ts=1740713198" />
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-6">
           {/* Navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-8">
@@ -98,10 +98,10 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
             </ul>
           </nav>
 
-          {/* Google Translate Widget */}
-          <div className="hidden md:flex items-center">
-            <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 rounded-md">
-              <Globe size={16} className="text-secondary-600" />
+          {/* Google Translate Widget - Desktop */}
+          <div className="hidden md:block">
+            <div className="translate-container">
+              <Globe size={18} className="translate-icon" />
               <div id="google_translate_element" className="translate-widget"></div>
             </div>
           </div>
@@ -156,10 +156,10 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
             
             {/* Mobile Google Translate */}
             <li className="px-6 py-3 border-t border-secondary-100">
-              <div className="flex items-center gap-2">
-                <Globe size={16} className="text-secondary-600" />
-                <span className="text-sm text-secondary-600">Translate:</span>
-                <div id="google_translate_element_mobile" className="translate-widget-mobile"></div>
+              <div className="translate-container-mobile">
+                <Globe size={16} className="text-secondary-600 flex-shrink-0" />
+                <span className="text-sm text-secondary-600 font-medium">Translate:</span>
+                <div id="google_translate_element_mobile" className="translate-widget-mobile flex-1"></div>
               </div>
             </li>
           </ul>

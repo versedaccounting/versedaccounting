@@ -36,10 +36,25 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
     
     if (!isExternal && href.startsWith('#')) {
       // Handle anchor links on the same page
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          
+          // Trigger animations after scrolling
+          setTimeout(() => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            animatedElements.forEach((el) => {
+              const elementTop = el.getBoundingClientRect().top;
+              const elementVisible = 150;
+              
+              if (elementTop < window.innerHeight - elementVisible) {
+                el.classList.add('in-view');
+              }
+            });
+          }, 500);
+        }
+      }, 100);
     }
   };
 

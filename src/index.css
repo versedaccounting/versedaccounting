@@ -51,6 +51,30 @@ h1, h2, h3, h4, h5, h6 {
   @apply opacity-100 translate-y-0;
 }
 
+/* Ensure elements are visible by default on smaller screens or when animations fail */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+/* Fallback for elements that should always be visible */
+.animate-on-scroll:not(.in-view) {
+  animation: fadeInUp 0.7s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Line clamp utility */
 .line-clamp-3 {
   display: -webkit-box;

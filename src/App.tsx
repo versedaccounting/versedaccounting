@@ -38,12 +38,34 @@ function App() {
       });
     };
 
+    // Function to trigger animations immediately for visible elements
+    const triggerVisibleAnimations = () => {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      animatedElements.forEach((el) => {
+        const elementTop = el.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        // If element is already visible, show it immediately
+        if (elementTop < window.innerHeight - elementVisible) {
+          el.classList.add('in-view');
+        }
+      });
+    };
+
     // Add scroll event listener when component mounts
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check for elements
     
-    // Cleanup event listener when component unmounts
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Initial check for elements and trigger animations
+    handleScroll();
+    
+    // Also trigger animations after a short delay to ensure DOM is ready
+    const timer = setTimeout(triggerVisibleAnimations, 100);
+    
+    // Cleanup event listener and timer when component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timer);
+    };
   }, []);
 
   // Home page component

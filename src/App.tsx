@@ -10,6 +10,14 @@ import Footer from './components/Footer';
 import Articles from './components/Articles';
 import ArticleDetail from './components/ArticleDetail';
 
+// Declare global google translate interface
+declare global {
+  interface Window {
+    google: any;
+    googleTranslateElementInit: () => void;
+  }
+}
+
 function App() {
   // State to track if user has scrolled down the page
   const [scrolling, setScrolling] = useState(false);
@@ -47,27 +55,33 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Initialize Google Translate for mobile after component mounts
-    const initMobileTranslate = () => {
+    // Re-initialize Google Translate when route changes
+    const reinitializeGoogleTranslate = () => {
       if (window.google && window.google.translate) {
-        new window.google.translate.TranslateElement({
-          pageLanguage: 'en', 
-          includedLanguages: 'pt,es,fr,de,it,zh,ja,ko,ar,ru',
-          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
-        }, 'google_translate_element_mobile');
+        // Clear existing instances
+        const desktopElement = document.getElementById('google_translate_element');
+        const mobileElement = document.getElementById('google_translate_element_mobile');
+        
+        if (desktopElement) {
+          desktopElement.innerHTML = '';
+        }
+        if (mobileElement) {
+          mobileElement.innerHTML = '';
+        }
+        
+        // Reinitialize
+        setTimeout(() => {
+          if (window.googleTranslateElementInit) {
+            window.googleTranslateElementInit();
+          }
+        }, 100);
       }
     };
 
-    // Wait for Google Translate to load
-    const checkGoogleTranslate = setInterval(() => {
-      if (window.google && window.google.translate) {
-        initMobileTranslate();
-        clearInterval(checkGoogleTranslate);
-      }
-    }, 100);
-
-    return () => clearInterval(checkGoogleTranslate);
+    // Wait a bit for the DOM to be ready
+    const timer = setTimeout(reinitializeGoogleTranslate, 500);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   // Home page component

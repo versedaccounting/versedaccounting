@@ -46,6 +46,30 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Initialize Google Translate for mobile after component mounts
+    const initMobileTranslate = () => {
+      if (window.google && window.google.translate) {
+        new window.google.translate.TranslateElement({
+          pageLanguage: 'en', 
+          includedLanguages: 'pt,es,fr,de,it,zh,ja,ko,ar,ru',
+          layout: window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false
+        }, 'google_translate_element_mobile');
+      }
+    };
+
+    // Wait for Google Translate to load
+    const checkGoogleTranslate = setInterval(() => {
+      if (window.google && window.google.translate) {
+        initMobileTranslate();
+        clearInterval(checkGoogleTranslate);
+      }
+    }, 100);
+
+    return () => clearInterval(checkGoogleTranslate);
+  }, []);
+
   // Home page component
   const HomePage = () => (
     <main>

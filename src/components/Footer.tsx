@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
-import { Facebook, Instagram, Linkedin, Mail, ChevronUp } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, ChevronUp, Calendar } from 'lucide-react';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -49,69 +49,95 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-secondary-900 text-white pt-16 pb-8">
-      <div className="container">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          <div className="lg:col-span-2">
-            <div className="mb-6">
-              <Logo imageUrl="https://i.imgur.com/0XHUuUX.png" />
-            </div>
-            <p className="text-secondary-300 mb-6 max-w-md">
-              Transforming numbers into intelligent decisions. Specialized accounting for businesses of all sizes.
+    <footer className="bg-secondary-900 text-white">
+      {/* Call to Action Section */}
+      <div className="bg-gradient-to-r from-primary-500 to-primary-400 py-16">
+        <div className="container text-center">
+          <div className="max-w-3xl mx-auto">
+            <h3 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6">
+              Prefer to schedule a consultation? Click the button below
+            </h3>
+            <p className="text-lg text-secondary-800 mb-8 max-w-2xl mx-auto">
+              Get personalized accounting advice tailored to your business needs. Our experts are ready to help you achieve your financial goals.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  aria-label={link.label}
-                  className="w-10 h-10 bg-secondary-800 flex items-center justify-center rounded-full hover:bg-primary-500 hover:text-secondary-900 transition-colors"
-                >
-                  {link.icon}
-                </a>
-              ))}
+            <a 
+              href="https://calendly.com/versedacc" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-3 bg-secondary-900 text-primary-500 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-secondary-800 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+            >
+              <Calendar size={24} />
+              Schedule a Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="pt-16 pb-8">
+        <div className="container">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+            <div className="lg:col-span-2">
+              <div className="mb-6">
+                <Logo imageUrl="https://i.imgur.com/0XHUuUX.png" />
+              </div>
+              <p className="text-secondary-300 mb-6 max-w-md">
+                Transforming numbers into intelligent decisions. Specialized accounting for businesses of all sizes.
+              </p>
+              <div className="flex space-x-4">
+                {socialLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    aria-label={link.label}
+                    className="w-10 h-10 bg-secondary-800 flex items-center justify-center rounded-full hover:bg-primary-500 hover:text-secondary-900 transition-colors"
+                  >
+                    {link.icon}
+                  </a>
+                ))}
+              </div>
             </div>
+            
+            {footerLinks.map((column, colIndex) => (
+              <div key={colIndex}>
+                <h4 className="font-bold text-lg mb-4">{column.title}</h4>
+                <ul className="space-y-3">
+                  {column.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      {link.isRoute ? (
+                        <Link 
+                          to={link.href} 
+                          className="text-secondary-300 hover:text-primary-500 transition-colors"
+                        >
+                          {link.name}
+                        </Link>
+                      ) : (
+                        <a 
+                          href={link.href} 
+                          className="text-secondary-300 hover:text-primary-500 transition-colors"
+                        >
+                          {link.name}
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
           
-          {footerLinks.map((column, colIndex) => (
-            <div key={colIndex}>
-              <h4 className="font-bold text-lg mb-4">{column.title}</h4>
-              <ul className="space-y-3">
-                {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    {link.isRoute ? (
-                      <Link 
-                        to={link.href} 
-                        className="text-secondary-300 hover:text-primary-500 transition-colors"
-                      >
-                        {link.name}
-                      </Link>
-                    ) : (
-                      <a 
-                        href={link.href} 
-                        className="text-secondary-300 hover:text-primary-500 transition-colors"
-                      >
-                        {link.name}
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        
-        <div className="border-t border-secondary-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-secondary-400 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} Versed Accounting LLC. All rights reserved.
-          </p>
-          <button 
-            onClick={scrollToTop}
-            aria-label="Back to top"
-            className="bg-secondary-800 p-3 rounded-full hover:bg-primary-500 hover:text-secondary-900 transition-colors"
-          >
-            <ChevronUp size={20} />
-          </button>
+          <div className="border-t border-secondary-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <p className="text-secondary-400 text-sm mb-4 md:mb-0">
+              &copy; {currentYear} Versed Accounting LLC. All rights reserved.
+            </p>
+            <button 
+              onClick={scrollToTop}
+              aria-label="Back to top"
+              className="bg-secondary-800 p-3 rounded-full hover:bg-primary-500 hover:text-secondary-900 transition-colors"
+            >
+              <ChevronUp size={20} />
+            </button>
+          </div>
         </div>
       </div>
     </footer>

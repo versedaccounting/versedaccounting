@@ -4,11 +4,14 @@ Este repositório contém o código-fonte do site institucional da Versed Accoun
 
 ## 🔧 Tecnologias Utilizadas
 
-- [Vite](https://vitejs.dev/) – Ferramenta de build rápida para projetos front-end
-- [Tailwind CSS](https://tailwindcss.com/) – Framework utilitário para estilos
-- [TypeScript](https://www.typescriptlang.org/) – Superset do JavaScript com tipagem estática
-- [PostCSS](https://postcss.org/) – Ferramenta para transformação de CSS com plugins
-- [ESLint](https://eslint.org/) – Ferramenta de linting para manter a qualidade do código
+- [React](https://react.dev/)
+- [React Router](https://reactrouter.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Lucide React](https://lucide.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## 📁 Estrutura do Projeto
 

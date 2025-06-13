@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Articles from './components/Articles';
 import ArticleDetail from './components/ArticleDetail';
+import Pricing from './components/Pricing';
 
 function App() {
   // State to track if user has scrolled down the page
@@ -90,6 +91,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<ArticleDetail />} />
+          <Route path="/pricing" element={<Pricing />} />
         </Routes>
         
         {/* Footer component */}

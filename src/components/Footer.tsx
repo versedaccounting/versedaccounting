@@ -19,6 +19,7 @@ const Footer: React.FC = () => {
         { name: 'Testimonials', href: '/#testimonials', isRoute: false },
         { name: 'About Us', href: '/#about', isRoute: false },
         { name: 'Articles', href: '/articles', isRoute: true },
+        { name: 'Pricing', href: '/pricing', isRoute: true },
         { name: 'Contact', href: '/#contact', isRoute: false },
       ]
     },

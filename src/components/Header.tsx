@@ -22,6 +22,7 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
     { name: 'Testimonials', href: isHomePage ? '#testimonials' : '/#testimonials', isExternal: false },
     { name: 'About Us', href: isHomePage ? '#about' : '/#about', isExternal: false },
     { name: 'Articles', href: '/articles', isExternal: false },
+    { name: 'Pricing', href: '/pricing', isExternal: false },
     { name: 'Contact', href: isHomePage ? '#contact' : '/#contact', isExternal: false },
   ];
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
 interface Article {
@@ -14,6 +14,7 @@ interface Article {
 const Articles: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -70,6 +71,17 @@ const Articles: React.FC = () => {
       month: 'long',
       day: 'numeric'
     });
+  };
+
+  const handleContactExpertsClick = () => {
+    // Navigate to home page and scroll to contact section
+    navigate('/');
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   if (loading) {
@@ -170,10 +182,13 @@ const Articles: React.FC = () => {
             <p className="text-secondary-600 mb-6 max-w-2xl mx-auto">
               Our articles provide general guidance, but every business is unique. Get personalized accounting advice tailored to your specific needs.
             </p>
-            <Link to="/#contact" className="btn btn-primary inline-flex items-center gap-2">
+            <button 
+              onClick={handleContactExpertsClick}
+              className="btn btn-primary inline-flex items-center gap-2"
+            >
               Contact Our Experts
               <ArrowRight size={20} />
-            </Link>
+            </button>
           </div>
         </div>
       </div>

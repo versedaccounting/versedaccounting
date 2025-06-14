@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calculator, TrendingUp, Landmark, HeadsetIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -65,9 +66,9 @@ const Services: React.FC = () => {
         </div>
         
         <div className="mt-12 text-center animate-on-scroll">
-          <a href="#contact" className="btn btn-primary inline-flex items-center gap-2">
-            Request a proposal
-          </a>
+          <Link to="/pricing" className="btn btn-primary inline-flex items-center gap-2">
+            More Details
+          </Link>
         </div>
       </div>
     </section>

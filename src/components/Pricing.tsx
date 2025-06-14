@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, ArrowRight, Phone, Mail, Calendar } from 'lucide-react';
+import { Check, ArrowRight, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Contact from './Contact';
 
@@ -59,6 +59,21 @@ const Pricing: React.FC = () => {
   const scrollToContact = () => {
     document.getElementById('pricing-contact')?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const contactInfo = [
+    {
+      icon: <Phone size={24} className="text-primary-500" />,
+      title: "Phone",
+      details: "+1 503-852-1732",
+      action: "tel:+15038521732"
+    },
+    {
+      icon: <Mail size={24} className="text-primary-500" />,
+      title: "Email",
+      details: "info@versedacc.com",
+      action: "mailto:info@versedacc.com"
+    }
+  ];
 
   return (
     <div className="min-h-screen pt-28 pb-20 px-4">
@@ -176,29 +191,30 @@ const Pricing: React.FC = () => {
           </div>
         </div>
 
+        {/* Call or Email Our Team - Simplified */}
+        <div className="text-center mb-12 animate-on-scroll">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Call or Email Our Team</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-12">
+            {contactInfo.map((info, index) => (
+              <a 
+                key={index} 
+                href={info.action}
+                className="card p-6 text-center hover:bg-primary-50 transition-colors"
+              >
+                <div className="w-16 h-16 bg-white rounded-full shadow-soft flex items-center justify-center mx-auto mb-4">
+                  {info.icon}
+                </div>
+                <h3 className="font-bold text-xl mb-2">{info.title}</h3>
+                <p className="text-secondary-600">{info.details}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Contact Form */}
         <div id="pricing-contact" className="mb-16">
           <Contact />
-        </div>
-
-        {/* Schedule Consultation CTA */}
-        <div className="bg-gradient-to-r from-primary-500 to-primary-400 py-8 rounded-lg animate-on-scroll">
-          <div className="text-center">
-            <div className="max-w-2xl mx-auto">
-              <h3 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-4">
-                Prefer to schedule a consultation? Click the button below
-              </h3>
-              <a 
-                href="https://calendly.com/versedacc" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-flex items-center gap-2 bg-secondary-900 text-primary-500 px-6 py-3 rounded-lg font-semibold hover:bg-secondary-800 hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
-              >
-                <Calendar size={20} />
-                Schedule a Consultation
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -60,21 +60,6 @@ const Pricing: React.FC = () => {
     document.getElementById('pricing-contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const contactInfo = [
-    {
-      icon: <Phone size={24} className="text-primary-500" />,
-      title: "Phone",
-      details: "+1 503-852-1732",
-      action: "tel:+15038521732"
-    },
-    {
-      icon: <Mail size={24} className="text-primary-500" />,
-      title: "Email",
-      details: "info@versedacc.com",
-      action: "mailto:info@versedacc.com"
-    }
-  ];
-
   return (
     <div className="min-h-screen pt-28 pb-20 px-4">
       <div className="container">
@@ -188,30 +173,6 @@ const Pricing: React.FC = () => {
               <h3 className="font-bold mb-2">CFO Services</h3>
               <p className="text-secondary-600 text-sm">Strategic financial guidance and analysis to help drive your business growth and profitability.</p>
             </div>
-          </div>
-        </div>
-
-        {/* Get in Touch - Simplified */}
-        <div className="text-center mb-12 animate-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-lg text-secondary-600 max-w-2xl mx-auto mb-8">
-            Ready to get started? Contact us today to discuss your accounting needs.
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto mb-12">
-            {contactInfo.map((info, index) => (
-              <a 
-                key={index} 
-                href={info.action}
-                className="card p-6 text-center hover:bg-primary-50 transition-colors"
-              >
-                <div className="w-16 h-16 bg-white rounded-full shadow-soft flex items-center justify-center mx-auto mb-4">
-                  {info.icon}
-                </div>
-                <h3 className="font-bold text-xl mb-2">{info.title}</h3>
-                <p className="text-secondary-600">{info.details}</p>
-              </a>
-            ))}
           </div>
         </div>
 

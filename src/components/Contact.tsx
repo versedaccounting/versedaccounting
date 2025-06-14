@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import { useForm } from 'react-hook-form';
+import { useLocation } from 'react-router-dom';
 
 interface FormData {
   name: string;
@@ -14,6 +15,8 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState('');
+  const location = useLocation();
+  const isPricingPage = location.pathname === '/pricing';
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
@@ -42,7 +45,21 @@ const Contact: React.FC = () => {
     }
   };
 
-  const contactInfo = [
+  // Different contact info based on page
+  const contactInfo = isPricingPage ? [
+    {
+      icon: <Phone size={24} className="text-primary-500" />,
+      title: "Phone",
+      details: "+1 503-852-1732",
+      action: "tel:+15038521732"
+    },
+    {
+      icon: <Mail size={24} className="text-primary-500" />,
+      title: "Email",
+      details: "info@versedacc.com",
+      action: "mailto:info@versedacc.com"
+    }
+  ] : [
     {
       icon: <Phone size={24} className="text-primary-500" />,
       title: "Phone",
@@ -64,16 +81,20 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-8 md:py-12 px-4 bg-white">
+    <section id="contact" className={`px-4 bg-white ${isPricingPage ? 'py-4' : 'py-8 md:py-12'}`}>
       <div className="container">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
-          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-            We're ready to help your business and transform your accounting into a competitive advantage.
-          </p>
+        <div className={`text-center ${isPricingPage ? 'mb-6' : 'mb-12'}`}>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            {isPricingPage ? 'Call or Email Our Team' : 'Get in Touch'}
+          </h2>
+          {!isPricingPage && (
+            <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
+              We're ready to help your business and transform your accounting into a competitive advantage.
+            </p>
+          )}
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <div className={`grid ${isPricingPage ? 'md:grid-cols-2' : 'md:grid-cols-3'} gap-8 ${isPricingPage ? 'mb-6' : 'mb-12'}`}>
           {contactInfo.map((info, index) => (
             <a 
               key={index} 

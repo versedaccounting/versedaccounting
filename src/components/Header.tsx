@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 
 interface HeaderProps {
@@ -10,10 +10,25 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ scrolling }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isHomePage) {
+      // Se já estiver na página principal, apenas rola para o topo
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Se estiver em outra página, navega para a home e depois rola para o topo
+      navigate('/');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
   };
 
   const navLinks = [
@@ -68,9 +83,9 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
       }`}
     >
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/" className="block">
+        <a href="/" onClick={handleLogoClick} className="block">
           <Logo imageUrl="https://www.versedacc.com/gallery/Versed%20Accounting.png?ts=1740713198" />
-        </Link>
+        </a>
 
         <nav className="hidden md:block">
           <ul className="flex space-x-8">

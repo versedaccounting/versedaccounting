@@ -44,6 +44,11 @@ const Services: React.FC = () => {
     },
   ];
 
+  const handleMoreDetailsClick = () => {
+    // Scroll to top when navigating to pricing
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <section id="services" className="py-12 md:py-16 px-4 bg-gray-50">
       <div className="container">
@@ -66,7 +71,11 @@ const Services: React.FC = () => {
         </div>
         
         <div className="mt-12 text-center animate-on-scroll">
-          <Link to="/pricing" className="btn btn-primary inline-flex items-center gap-2">
+          <Link 
+            to="/pricing" 
+            className="btn btn-primary inline-flex items-center gap-2"
+            onClick={handleMoreDetailsClick}
+          >
             More Details
           </Link>
         </div>

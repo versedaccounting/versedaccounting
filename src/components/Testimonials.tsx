@@ -101,7 +101,7 @@ const Testimonials: React.FC = () => {
                 </div>
               </div>
               <a 
-                href="https://www.google.com/search?q=versed+accounting+reviews" 
+                href="https://maps.app.goo.gl/HjBdV7j1BWzgh3Dr8" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"

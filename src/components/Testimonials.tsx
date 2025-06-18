@@ -135,7 +135,7 @@ const Testimonials: React.FC = () => {
                 href="https://maps.app.goo.gl/HjBdV7j1BWzgh3Dr8" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-600 transition-colors"
+                className="bg-primary-500 text-secondary-900 px-4 py-2 rounded-md text-sm font-medium hover:bg-primary-600 transition-colors shadow-button hover:shadow-lg"
               >
                 Review us on Google
               </a>

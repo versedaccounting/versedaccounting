@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const Testimonials: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [expandedReviews, setExpandedReviews] = useState<{ [key: number]: boolean }>({});
 
   const reviews = [
     {
@@ -54,6 +55,13 @@ const Testimonials: React.FC = () => {
     setCurrentSlide(index);
   };
 
+  const toggleExpanded = (reviewId: number) => {
+    setExpandedReviews(prev => ({
+      ...prev,
+      [reviewId]: !prev[reviewId]
+    }));
+  };
+
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
@@ -72,6 +80,29 @@ const Testimonials: React.FC = () => {
       'L': 'bg-blue-500'
     };
     return colors[initial as keyof typeof colors] || 'bg-gray-500';
+  };
+
+  const renderReviewText = (review: { id: number; text: string }) => {
+    const isExpanded = expandedReviews[review.id];
+    const shouldTruncate = review.text.length > 150;
+    
+    if (!shouldTruncate) {
+      return <p className="text-gray-700 text-sm leading-relaxed">{review.text}</p>;
+    }
+
+    return (
+      <div className="text-gray-700 text-sm leading-relaxed">
+        <p className={`transition-all duration-300 ${isExpanded ? '' : 'line-clamp-3'}`}>
+          {isExpanded ? review.text : `${review.text.substring(0, 150)}...`}
+        </p>
+        <button
+          onClick={() => toggleExpanded(review.id)}
+          className="text-blue-500 hover:text-blue-600 mt-2 text-sm font-medium transition-colors"
+        >
+          {isExpanded ? 'Show less' : 'Read more'}
+        </button>
+      </div>
+    );
   };
 
   return (
@@ -154,18 +185,7 @@ const Testimonials: React.FC = () => {
                             </div>
                           </div>
                         </div>
-                        <p className="text-gray-700 text-sm leading-relaxed">
-                          {review.text.length > 150 ? (
-                            <>
-                              {review.text.substring(0, 150)}...
-                              <button className="text-blue-500 hover:text-blue-600 ml-1 text-sm">
-                                Read more
-                              </button>
-                            </>
-                          ) : (
-                            review.text
-                          )}
-                        </p>
+                        {renderReviewText(review)}
                       </div>
                     </div>
                   ))}

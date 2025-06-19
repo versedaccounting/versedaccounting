@@ -1,0 +1,32 @@
+# robots.txt – otimizado para SEO da Versed Accounting
+
+User-agent: *
+# Permite rastreamento geral, mas bloqueia áreas irrelevantes ou sensíveis
+Disallow: /admin/
+Disallow: /login/
+Disallow: /wp-admin/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /?replytocom=
+Disallow: /*?s=
+Disallow: /cgi-bin/
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.zip$
+# Permite acesso aos arquivos estáticos importantes para renderização (CSS/JS/Imagens)
+Allow: /wp-content/uploads/
+Allow: /wp-content/plugins/*.css
+Allow: /wp-content/plugins/*.js
+
+# Sitemap para melhor descoberta de páginas importantes
+Sitemap: https://versedaccounting.com/sitemap.xml
+
+# Crawl-delay — recomendado em sites com restrições de servidor,
+# embora o Google ignore, outros bots podem respeitar
+Crawl-delay: 10
+
+# Bloqueia bots específicos (opcional)
+User-agent: BadBot
+Disallow: /
+
+# Fim do arquivo

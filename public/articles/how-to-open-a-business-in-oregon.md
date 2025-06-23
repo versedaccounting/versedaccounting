@@ -12,13 +12,13 @@ slug: "how-to-open-a-business-in-oregon"
 
 Thinking about starting a business in Oregon? Great choice! Oregon offers a welcoming environment for entrepreneurs, with low startup costs, a strong local economy, and a wide range of support resources.
 
-In this article, we’ll walk you through every step needed to officially launch your business in Oregon.
+In this article, we'll walk you through every step needed to officially launch your business in Oregon.
 
 ## 1. Choose the Right Business Structure
 
 The first decision is selecting the best legal structure for your business:
 
-- **Sole Proprietorship**: Easy to set up but doesn’t offer personal liability protection.
+- **Sole Proprietorship**: Easy to set up but doesn't offer personal liability protection.
 - **Limited Liability Company (LLC)**: Popular for small businesses. Offers liability protection and flexibility.
 - **Corporation (C or S Corp)**: Ideal for businesses seeking investors or issuing shares.
 - **Partnership**: Best for businesses with two or more owners sharing responsibilities.
@@ -29,7 +29,7 @@ The first decision is selecting the best legal structure for your business:
 
 Check name availability using the [Oregon Business Name Search Tool](https://secure.sos.state.or.us/cbrmanager/index).
 
-You can also register a **DBA (“Doing Business As”)** if operating under a different name than your legal entity.
+You can also register a **DBA ("Doing Business As")** if operating under a different name than your legal entity.
 
 ## 3. Register Your Business with the Oregon Secretary of State
 
@@ -76,7 +76,7 @@ Check local requirements with your city or county office. For Carlton, OR:
 
 ## 8. Understand Ongoing Requirements
 
-Once your business is running, you’ll need to:
+Once your business is running, you'll need to:
 - File an annual report with the Secretary of State ($100/year)
 - Track and pay taxes regularly
 - Renew business licenses as needed

@@ -26,6 +26,14 @@ const Articles: React.FC = () => {
         // Mock articles data - replace with actual markdown file loading
         const mockArticles: Article[] = [
           {
+            slug: 'how-to-open-a-business-in-oregon',
+            title: 'How to Open a Business in Oregon: Step-by-Step Guide (2025)',
+            excerpt: 'Starting a business in Oregon? This 2025 step-by-step guide walks you through everything from choosing a structure to registering and complying with local laws.',
+            date: '2025-06-23',
+            readTime: '7 min',
+            category: 'Business Formation'
+          },
+          {
             slug: 'how-to-organize-your-business-finances',
             title: 'How to Organize Your Business Finances',
             excerpt: 'Discover the best practices to keep your business finances organized and optimize your results.',

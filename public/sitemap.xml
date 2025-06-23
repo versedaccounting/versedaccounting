@@ -47,7 +47,7 @@
   <!-- Articles Page -->
   <url>
     <loc>https://versedaccounting.com/articles</loc>
-    <lastmod>2024-01-20</lastmod>
+    <lastmod>2025-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -61,6 +61,13 @@
   </url>
   
   <!-- Individual Articles -->
+  <url>
+    <loc>https://versedaccounting.com/articles/how-to-open-a-business-in-oregon</loc>
+    <lastmod>2025-06-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <url>
     <loc>https://versedaccounting.com/articles/how-to-organize-your-business-finances</loc>
     <lastmod>2024-01-15</lastmod>

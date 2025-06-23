@@ -32,13 +32,13 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
   };
 
   const navLinks = [
-    { name: 'Home', href: '/', isExternal: false },
-    { name: 'Services', href: isHomePage ? '#services' : '/#services', isExternal: false },
-    { name: 'Testimonials', href: isHomePage ? '#testimonials' : '/#testimonials', isExternal: false },
-    { name: 'About Us', href: isHomePage ? '#about' : '/#about', isExternal: false },
-    { name: 'Articles', href: '/articles', isExternal: false },
-    { name: 'Pricing', href: '/pricing', isExternal: false },
-    { name: 'Contact', href: isHomePage ? '#contact' : '/#contact', isExternal: false },
+    { name: 'Home', href: '/', isExternal: false, isContact: false },
+    { name: 'Services', href: isHomePage ? '#services' : '/#services', isExternal: false, isContact: false },
+    { name: 'Testimonials', href: isHomePage ? '#testimonials' : '/#testimonials', isExternal: false, isContact: false },
+    { name: 'About Us', href: isHomePage ? '#about' : '/#about', isExternal: false, isContact: false },
+    { name: 'Articles', href: '/articles', isExternal: false, isContact: false },
+    { name: 'Pricing', href: '/pricing', isExternal: false, isContact: false },
+    { name: 'Contact', href: isHomePage ? '#contact' : '/#contact', isExternal: false, isContact: true },
   ];
 
   const handleNavClick = (href: string, isExternal: boolean, linkName: string) => {
@@ -88,14 +88,16 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
         </a>
 
         <nav className="hidden md:block">
-          <ul className="flex space-x-8">
+          <ul className="flex space-x-8 items-center">
             {navLinks.map((link) => (
               <li key={link.name}>
                 {link.href.startsWith('/') && !link.href.includes('#') ? (
                   <Link
                     to={link.href}
-                    className={`font-medium hover:text-primary-500 transition-colors ${
-                      scrolling ? 'text-secondary-800' : 'text-secondary-800'
+                    className={`font-medium transition-all duration-300 ${
+                      link.isContact 
+                        ? 'bg-primary-500 text-secondary-900 px-4 py-2 rounded-md hover:bg-primary-600 hover:shadow-button transform hover:-translate-y-0.5' 
+                        : `hover:text-primary-500 ${scrolling ? 'text-secondary-800' : 'text-secondary-800'}`
                     }`}
                     onClick={(e) => {
                       if (link.name === 'Home' && isHomePage) {
@@ -109,8 +111,10 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                 ) : (
                   <a
                     href={link.href}
-                    className={`font-medium hover:text-primary-500 transition-colors ${
-                      scrolling ? 'text-secondary-800' : 'text-secondary-800'
+                    className={`font-medium transition-all duration-300 ${
+                      link.isContact 
+                        ? 'bg-primary-500 text-secondary-900 px-4 py-2 rounded-md hover:bg-primary-600 hover:shadow-button transform hover:-translate-y-0.5' 
+                        : `hover:text-primary-500 ${scrolling ? 'text-secondary-800' : 'text-secondary-800'}`
                     }`}
                     onClick={(e) => {
                       if (link.href.startsWith('#')) {
@@ -144,7 +148,11 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                 {link.href.startsWith('/') && !link.href.includes('#') ? (
                   <Link
                     to={link.href}
-                    className="block py-3 px-6 text-secondary-800 hover:bg-primary-50 hover:text-primary-500"
+                    className={`block py-3 px-6 transition-all duration-300 ${
+                      link.isContact 
+                        ? 'bg-primary-500 text-secondary-900 mx-4 my-2 rounded-md text-center font-semibold hover:bg-primary-600' 
+                        : 'text-secondary-800 hover:bg-primary-50 hover:text-primary-500'
+                    }`}
                     onClick={(e) => {
                       if (link.name === 'Home' && isHomePage) {
                         e.preventDefault();
@@ -159,7 +167,11 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                 ) : (
                   <a
                     href={link.href}
-                    className="block py-3 px-6 text-secondary-800 hover:bg-primary-50 hover:text-primary-500"
+                    className={`block py-3 px-6 transition-all duration-300 ${
+                      link.isContact 
+                        ? 'bg-primary-500 text-secondary-900 mx-4 my-2 rounded-md text-center font-semibold hover:bg-primary-600' 
+                        : 'text-secondary-800 hover:bg-primary-50 hover:text-primary-500'
+                    }`}
                     onClick={(e) => {
                       if (link.href.startsWith('#')) {
                         e.preventDefault();

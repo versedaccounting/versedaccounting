@@ -10,6 +10,9 @@ import Footer from './components/Footer';
 import Articles from './components/Articles';
 import ArticleDetail from './components/ArticleDetail';
 import Pricing from './components/Pricing';
+import TermsOfUse from './components/TermsOfUse';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import CookiePolicy from './components/CookiePolicy';
 
 function App() {
   // State to track if user has scrolled down the page
@@ -92,6 +95,9 @@ function App() {
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:slug" element={<ArticleDetail />} />
           <Route path="/pricing" element={<Pricing />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/cookie-policy" element={<CookiePolicy />} />
         </Routes>
         
         {/* Footer component */}

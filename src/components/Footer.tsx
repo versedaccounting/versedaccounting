@@ -35,9 +35,9 @@ const Footer: React.FC = () => {
     {
       title: 'Legal',
       links: [
-        { name: 'Terms of Use', href: '#', isRoute: false },
-        { name: 'Privacy Policy', href: '#', isRoute: false },
-        { name: 'Cookies', href: '#', isRoute: false },
+        { name: 'Terms of Use', href: '/terms-of-use', isRoute: true },
+        { name: 'Privacy Policy', href: '/privacy-policy', isRoute: true },
+        { name: 'Cookie Policy', href: '/cookie-policy', isRoute: true },
       ]
     },
   ];

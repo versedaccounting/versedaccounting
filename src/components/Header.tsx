@@ -92,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
           <ul className="flex items-center">
             {navLinks.map((link) => (
               <li key={link.name} className={`${
-                link.name === 'Client Login' ? 'ml-8 mr-4' : 
+                link.name === 'Client Login' ? 'mr-8' : 
                 link.name === 'Contact' ? '' : 'mr-8'
               }`}>
                 {link.isExternal ? (

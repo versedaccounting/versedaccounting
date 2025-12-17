@@ -38,6 +38,7 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
     { name: 'About Us', href: isHomePage ? '#about' : '/#about', isExternal: false, isContact: false },
     { name: 'Articles', href: '/articles', isExternal: false, isContact: false },
     { name: 'Pricing', href: '/pricing', isExternal: false, isContact: false },
+    { name: 'Client Login', href: 'https://clients.versedaccounting.com/client-login', isExternal: true, isContact: false },
     { name: 'Contact', href: isHomePage ? '#contact' : '/#contact', isExternal: false, isContact: true },
   ];
 
@@ -91,7 +92,20 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
           <ul className="flex space-x-8 items-center">
             {navLinks.map((link) => (
               <li key={link.name}>
-                {link.href.startsWith('/') && !link.href.includes('#') ? (
+                {link.isExternal ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`font-medium transition-all duration-300 ${
+                      link.isContact 
+                        ? 'bg-primary-500 text-secondary-900 px-4 py-2 rounded-md hover:bg-primary-600 hover:shadow-button transform hover:-translate-y-0.5' 
+                        : `hover:text-primary-500 ${scrolling ? 'text-secondary-800' : 'text-secondary-800'}`
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                ) : link.href.startsWith('/') && !link.href.includes('#') ? (
                   <Link
                     to={link.href}
                     className={`font-medium transition-all duration-300 ${
@@ -145,7 +159,21 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
           <ul className="flex flex-col py-4">
             {navLinks.map((link) => (
               <li key={link.name} className="border-b border-secondary-100 last:border-0">
-                {link.href.startsWith('/') && !link.href.includes('#') ? (
+                {link.isExternal ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block py-3 px-6 transition-all duration-300 ${
+                      link.isContact 
+                        ? 'bg-primary-500 text-secondary-900 mx-4 my-2 rounded-md text-center font-semibold hover:bg-primary-600' 
+                        : 'text-secondary-800 hover:bg-primary-50 hover:text-primary-500'
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </a>
+                ) : link.href.startsWith('/') && !link.href.includes('#') ? (
                   <Link
                     to={link.href}
                     className={`block py-3 px-6 transition-all duration-300 ${

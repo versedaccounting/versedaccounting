@@ -100,6 +100,10 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                     className={`font-medium transition-all duration-300 ${
                       link.isContact 
                         ? 'bg-primary-500 text-secondary-900 px-4 py-2 rounded-md hover:bg-primary-600 hover:shadow-button transform hover:-translate-y-0.5' 
+                        : link.name === 'Client Login'
+                        ? 'border-2 border-primary-500 text-secondary-900 px-4 py-2 rounded-md hover:bg-primary-500 hover:shadow-button transform hover:-translate-y-0.5 transition-all duration-300'
+                        : `hover:text-primary-500 ${scrolling ? 'text-secondary-800' : 'text-secondary-800'}`
+                        ? 'border-2 border-primary-500 text-secondary-900 px-4 py-2 rounded-md hover:bg-primary-500 hover:shadow-button transform hover:-translate-y-0.5 transition-all duration-300'
                         : `hover:text-primary-500 ${scrolling ? 'text-secondary-800' : 'text-secondary-800'}`
                     }`}
                   >
@@ -167,6 +171,8 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
                     className={`block py-3 px-6 transition-all duration-300 ${
                       link.isContact 
                         ? 'bg-primary-500 text-secondary-900 mx-4 my-2 rounded-md text-center font-semibold hover:bg-primary-600' 
+                        : link.name === 'Client Login'
+                        ? 'border-2 border-primary-500 text-secondary-900 mx-4 my-2 rounded-md text-center font-semibold hover:bg-primary-500'
                         : 'text-secondary-800 hover:bg-primary-50 hover:text-primary-500'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}

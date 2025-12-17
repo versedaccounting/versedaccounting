@@ -89,9 +89,12 @@ const Header: React.FC<HeaderProps> = ({ scrolling }) => {
         </a>
 
         <nav className="hidden md:block">
-          <ul className="flex space-x-8 items-center">
+          <ul className="flex items-center">
             {navLinks.map((link) => (
-              <li key={link.name}>
+              <li key={link.name} className={`${
+                link.name === 'Client Login' ? 'ml-8 mr-4' : 
+                link.name === 'Contact' ? '' : 'mr-8'
+              }`}>
                 {link.isExternal ? (
                   <a
                     href={link.href}
